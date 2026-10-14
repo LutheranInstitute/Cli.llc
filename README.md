@@ -1,5 +1,7 @@
 # >_ cli.llc · hark-studio
 
+![Tres amigos](assets/tres-amigos.jpg)
+
 **#startabusiness** empieza aquí: cli.llc es la marca y la capa de ejecución.
 
 **Tres amigos: Yæl decide · Hark prepara · Hermes ejecuta.**
@@ -7,6 +9,8 @@
 
 `æ://cli.llc` es el taller compartido entre Yæl Méndez, Hark y Hermes Agent (el océano).
 Aquí las ideas se vuelven tarjetas, las tarjetas se vuelven trabajo, y el trabajo deja evidencia.
+
+> **Fuente única de verdad.** Si no está aquí, no pasó. Ver `AGENTS.md` y `STATE.md`.
 
 ---
 
@@ -46,6 +50,8 @@ Regla: toda tarea con riesgo (dinero, borrar, publicar, secretos, shell) espera 
 ```
 hark-studio/
 ├── README.md        este archivo
+├── AGENTS.md        reglas para todo agente
+├── STATE.md         estado vivo del tablero
 ├── cards/           tarjetas de trabajo (una por archivo, .md)
 ├── evidence/        recibos, logs y capturas de cada tarjeta
 ├── skills/          skills reutilizables para Hark y Hermes
@@ -56,11 +62,11 @@ hark-studio/
 
 ## Primeras tarjetas
 
-- [ ] `cards/001-hermes-api-droplet.md`: Hermes API Server detrás de nginx + TLS, `/health` y `/v1/capabilities`
-- [ ] `cards/002-doola-iframe.md`: iFrame de doola en `/startabusiness` con el link de PartnerStack como respaldo
-- [ ] `cards/003-rtx-tunnel.md`: levantar el túnel Victus → droplet y volver a hornear `droplet.html`
-- [ ] `cards/004-eai-spec.md`: EAI v0.1 (ocho dimensiones, evidencia observable)
-- [ ] `cards/005-repo-weight.md`: mover MP4 grandes del github.io a Releases/CDN
+- [ ] [`cards/001-hermes-api-droplet.md`](cards/001-hermes-api-droplet.md): Hermes API Server detrás de nginx + TLS, `/health` y `/v1/capabilities`
+- [ ] [`cards/002-doola-iframe.md`](cards/002-doola-iframe.md): iFrame de doola en `/startabusiness` con el link de PartnerStack como respaldo
+- [ ] [`cards/003-rtx-tunnel.md`](cards/003-rtx-tunnel.md): levantar el túnel Victus → droplet y volver a hornear `droplet.html`
+- [ ] [`cards/004-eai-spec.md`](cards/004-eai-spec.md): EAI v0.1 (ocho dimensiones, evidencia observable)
+- [ ] [`cards/005-repo-weight.md`](cards/005-repo-weight.md): mover MP4 grandes del github.io a Releases/CDN
 
 ---
 
