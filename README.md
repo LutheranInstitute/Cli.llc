@@ -1,6 +1,8 @@
 # >_ cli.llc · hark-studio
 
-![Tres amigos](assets/tres-amigos.jpg)
+[![Tres amigos · ver video](assets/tres-amigos.jpg)](assets/tres-amigos.mp4)
+
+▶ [Video 9:16 · tres-amigos.mp4](assets/tres-amigos.mp4)
 
 **#startabusiness** empieza aquí: cli.llc es la marca y la capa de ejecución.
 
