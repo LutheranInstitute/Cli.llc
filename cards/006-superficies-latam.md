@@ -6,7 +6,7 @@ aprobada: Yæl, 2026-10-14
 ---
 # Superficies educativas LATAM: el repo como aula
 
-Tres repos públicos en `yaeleureka-afk`:
+Tres repos públicos en `LutheranInstitute`:
 - `elearnlatam`: aula abierta del Diplomado + `LIVE.md` diario (æ://Classroom Live, solo conteos).
 - `aprendelatam`: plantilla del alumno (`is_template`), con `AGENTS.md` y `REFLEXION.md`.
 - `emprendelatam`: ruta #startabusiness → LLC con doola.

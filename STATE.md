@@ -13,4 +13,4 @@
 - Droplet `129.212.180.252`: broker `:3000` responde; hoja Victus inalcanzable; nginx `:80` da 502 (2026-10-13 20:20 CDT).
 - doola: el iFrame de referidos está activo desde 2026-10-13; atribuye por partner ID, no por el link de PartnerStack.
 - Link PartnerStack: `https://partnersps.doola.com/hhsoqhb23250`.
-- 2026-10-14: creados `elearnlatam`, `aprendelatam` (plantilla) y `emprendelatam` en yaeleureka-afk.
+- 2026-10-14: creados `elearnlatam`, `aprendelatam` (plantilla) y `emprendelatam` en LutheranInstitute.
