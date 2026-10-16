@@ -1,0 +1,232 @@
+{
+  "schema": "ae.curator.registry/0.1",
+  "curator": "Hark ($curator)",
+  "principal": "Yæl Méndez",
+  "as_of": "2026-10-16T10:31-05:00",
+  "doctrine": "Evidence ≠ Authority: el curador informa, Yæl decide.",
+  "sources": [
+    "https://github.com/LutheranInstitute/Cli.llc (STATE.md, cards/, AGENTS.md)",
+    "https://lutheraninstitute.github.io/aeee-lab/lab/ae.json",
+    "https://lutheraninstitute.github.io/bookstores/lab/ae.json",
+    "capability-manifest.json",
+    "fleet.json",
+    "glocal-mesh.html",
+    "droplet.html"
+  ],
+  "agents": [
+    {
+      "id": "yael",
+      "name": "Yæl Méndez",
+      "role": "principal",
+      "authority": "decide, aprueba, firma; único que mueve a done y fusiona a vivo"
+    },
+    {
+      "id": "hark",
+      "name": "Hark",
+      "role": "preparador / curador",
+      "runtime": "Hark Pro (nube)",
+      "capabilities": [
+        "research",
+        "cards",
+        "PRs vía Composio GitHub",
+        "lab pages",
+        "calendar/gmail de Yæl con aprobación"
+      ],
+      "lanes": [
+        "006",
+        "007 (hojas/lector/æQR)",
+        "004"
+      ],
+      "authority": {
+        "agents_may": [
+          "leer",
+          "proponer en lab/",
+          "abrir PRs",
+          "mover tarjetas a review"
+        ],
+        "human_only": [
+          "merge a vivo",
+          "publicar",
+          "dinero",
+          "secretos",
+          "correos a terceros"
+        ]
+      }
+    },
+    {
+      "id": "hermes",
+      "name": "Hermes æ",
+      "role": "ejecutor / conductor GLOCAL (SchemeDispatcher)",
+      "runtime": "Hermes Cloud (Nous Portal) + droplet vps://neuromitosis",
+      "capabilities": [
+        "terminal",
+        "skills",
+        "MCP (Composio)",
+        "gateway Email (pendiente, tarjeta 008)"
+      ],
+      "lanes": [
+        "001",
+        "005",
+        "007 (OCR)",
+        "008"
+      ],
+      "health": "sin canal directo verificado por Hark"
+    },
+    {
+      "id": "codex",
+      "name": "Codex",
+      "role": "código",
+      "runtime": "OpenAI",
+      "health": "sin datos"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "droplet",
+      "address": "vps://neuromitosis · 129.212.180.252",
+      "role": "broker CUDA-MCP² + ATProto PDS",
+      "probes": [
+        {
+          "url": ":3000/xrpc/ae.vps.rtx?op=status",
+          "http": 200,
+          "note": "broker responde, hoja inalcanzable"
+        },
+        {
+          "url": ":80",
+          "http": 502,
+          "note": "nginx sin backend"
+        }
+      ],
+      "health": "degradado"
+    },
+    {
+      "id": "victus",
+      "address": "rtx3050:// · pc://mesh/victus/local",
+      "role": "hoja GPU (RTX 3050 6GB)",
+      "health": "inalcanzable desde el droplet (túnel :3050 caído)",
+      "fix": "bash rtx-bridge.sh up · tarjeta 003 (Yæl)"
+    },
+    {
+      "id": "pages-ae",
+      "address": "myaelmendez.github.io",
+      "role": "superficie pública æææ.com",
+      "health": "200"
+    },
+    {
+      "id": "pages-li",
+      "address": "lutheraninstitute.github.io",
+      "role": "superficies institucionales y lab",
+      "health": "200"
+    }
+  ],
+  "surfaces": [
+    {
+      "id": "aeee-lab",
+      "manifest": "https://lutheraninstitute.github.io/aeee-lab/lab/ae.json",
+      "http": 200
+    },
+    {
+      "id": "codae-mail",
+      "manifest": "https://lutheraninstitute.github.io/aeee-lab/lab/codae-mail/ae.json",
+      "http": 200
+    },
+    {
+      "id": "env",
+      "manifest": "https://lutheraninstitute.github.io/aeee-lab/lab/env/ae.json",
+      "http": 200
+    },
+    {
+      "id": "bookstores-network",
+      "manifest": "https://lutheraninstitute.github.io/bookstores/lab/ae.json",
+      "http": 200,
+      "environments": [
+        "gospel",
+        "teologia.ai/gospel_bookstore",
+        "musica"
+      ]
+    },
+    {
+      "id": "hermes-skill",
+      "url": "https://myaelmendez.github.io/SKILL.md",
+      "http": 200
+    }
+  ],
+  "cards": {
+    "001": "todo · Hermes",
+    "002": "blocked · Hark",
+    "003": "todo · Yæl",
+    "004": "triage · Hark",
+    "005": "todo · Hermes",
+    "006": "review · Hark",
+    "007": "triage · Hermes+Hark",
+    "008": "triage · Hermes"
+  },
+  "routes_haebbian": [
+    {
+      "chain": "Hark → Composio GITHUB_COMMIT_MULTIPLE_FILES → LutheranInstitute/*",
+      "weight": 0.9,
+      "evidence": [
+        "Cli.llc a84f2b8",
+        "aeee-lab 8a5bd39",
+        "aeee-lab d2e837c"
+      ],
+      "note": "confiable; límite ~92 KB por archivo"
+    },
+    {
+      "chain": "Hark → codeload.github.com tarball → lectura de repos",
+      "weight": 0.8,
+      "note": "lectura rápida sin token"
+    },
+    {
+      "chain": "Hark → conector GitHub nativo",
+      "weight": 0.2,
+      "note": "409 ambiguous_account (dos cuentas sin email)"
+    },
+    {
+      "chain": "Hark → navegador → Hostinger vía Google",
+      "weight": 0.0,
+      "note": "2026-10-16: Google rechazó contraseña; recuperación bloqueada unas horas"
+    },
+    {
+      "chain": "droplet :3000 → túnel → victus :3050",
+      "weight": 0.1,
+      "note": "caído hoy"
+    }
+  ],
+  "hygiene": [
+    "008 depende de: buzón en llm.store (Yæl) → 001/Hermes en droplet; 003 (túnel) no bloquea 008.",
+    "nginx :80 da 502 desde al menos 2026-10-13: proponer tarjeta o incluir en 001.",
+    "Dos cuentas GitHub conectadas a Hark sin email: reconectar o nombrar para quitar ambigüedad.",
+    "Licencia de Codæ Mail pendiente (¿MIT?)."
+  ],
+  "dag_next": [
+    {
+      "id": "buzon",
+      "owner": "Yæl",
+      "then": [
+        "008-ready"
+      ]
+    },
+    {
+      "id": "008-ready",
+      "owner": "Yæl",
+      "then": [
+        "008-gateway"
+      ]
+    },
+    {
+      "id": "008-gateway",
+      "owner": "Hermes",
+      "then": [
+        "008-ping"
+      ]
+    },
+    {
+      "id": "008-ping",
+      "owner": "Yæl+Hermes",
+      "then": [
+        "review"
+      ]
+    }
+  ]
+}
