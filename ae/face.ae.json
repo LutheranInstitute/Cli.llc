@@ -1,0 +1,30 @@
+{
+  "schema": "ae.manifest/0.1",
+  "id": "asimov-face",
+  "name": "æ æ æ · Asimov face",
+  "status": "lab",
+  "address": "x0:y0:z0:æ1",
+  "surface": "https://lutheraninstitute.github.io/aeee-lab/lab/face/",
+  "context": "Cara robótica æ æ æ para el robot Asimov 1. El kiosco dibuja el ánimo desde face.json; el puente serve.py lee el estado del robot (solo lectura). Tarjeta: cards/011-cara-robotica.md.",
+  "capabilities": ["read robot state", "render mood", "serve face.json"],
+  "checkout": "none",
+  "authority": {
+    "agents_may": ["render", "serve", "log evidence"],
+    "human_only": ["arm", "move", "merge", "publish"],
+    "principal": "Yæl",
+    "note": "æ1 = publicada, solo lectura. Many agents. One principal. Human stays root."
+  },
+  "provenance": {
+    "card": "LutheranInstitute/Cli.llc cards/011-cara-robotica.md (rama 010-maech)",
+    "pieces": [
+      {"piece": "kiosk", "repo": "LutheranInstitute/aeee-lab", "branch": "lab", "path": "lab/face/"},
+      {"piece": "bridge", "repo": "LutheranInstitute/Robot", "branch": "ae-face", "path": "serve.py"},
+      {"piece": "maechlaeng", "repo": "LutheranInstitute/aeee-lab", "branch": "lab", "path": "face-v2.mec", "note": "sketch, not yet run"},
+      {"piece": "wrapper", "repo": "LutheranInstitute/Cli.llc", "branch": "010-maech", "path": "ae/face.ae.json"}
+    ],
+    "built_by": "Hark (flota)",
+    "proposed_by": "Yæl, 2026-10-16",
+    "evidence": "evidence/011/"
+  },
+  "æQR": "conceptual, not scannable"
+}
