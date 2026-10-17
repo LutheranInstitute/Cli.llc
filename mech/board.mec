@@ -1,0 +1,32 @@
+-- mæch · el tablero de cli.llc como máquina de estados
+-- Boceto/sketch, not yet run en un runtime de Mech (v0.3.5 beta).
+-- Lo hace cumplir hoy mech/check.mjs (JavaScript, sin dependencias).
+-- Mech es de Corey Montella, Apache-2.0. Sin afiliación.
+
+<estado> := :triage | :todo | :ready | :running | :blocked | :review | :done | :archived
+<quien>  := :yæl | :hark | :hermes
+
+principal := "yæl"
+agentes   := {"hark", "hermes"}
+riesgo    := {"dinero", "borrar", "publicar", "secretos", "shell-remoto", "correos", "legal"}
+
+-- Una tarjeta avanza; la autoridad no se hereda.
+#Card(e<estado>, q<quien>, aprobada<bool>) ⇒ <estado> :=
+  ├ :Mover(e, q, aprobada)
+  └ :Queda(e).
+
+#Card(e, q, ap) → :Mover(e, q, ap)
+  :Mover(e, q, ap)
+    ├ e ⩵ :triage                      → :Queda(:todo)      -- cualquiera propone
+    ├ e ⩵ :todo   && ¬ap               → :Queda(:todo)      -- con riesgo espera a Yæl
+    ├ e ⩵ :todo   && ap                → :Queda(:ready)
+    ├ e ⩵ :ready                       → :Queda(:running)   -- solo tarjetas en ready
+    ├ e ⩵ :running                     → :Queda(:review)    -- deja evidencia en evidence/<id>/
+    ├ e ⩵ :review && q ⩵ :yæl          → :Queda(:done)      -- done lo decide Yæl
+    ├ e ⩵ :review && q ≠ :yæl          → :Queda(:review)    -- Evidence ≠ Authority
+    └ e ⩵ :done   && q ⩵ :yæl          → :Queda(:archived)
+  :Queda(x) ⇒ x
+.
+
+-- Prueba: Hark intenta cerrar la 009.
+#Card(:review, :hark, ✓)   -- ⇒ :review  · Human stays root.

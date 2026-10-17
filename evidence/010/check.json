@@ -1,0 +1,101 @@
+{
+  "schema": "ae.mech.check/0.1",
+  "rules": "mech/board.mec",
+  "at": "2026-10-17T00:10:49.378Z",
+  "ok": true,
+  "errors": [],
+  "warnings": [],
+  "cards": [
+    {
+      "file": "001-hermes-api-droplet.md",
+      "id": "001",
+      "estado": "todo",
+      "dueno": "Hermes",
+      "riesgo": true,
+      "aprobada": false,
+      "sha256": "4900489e876a9aee03ac6c8c16fea3956ce08124e912a2a4c3d3808946ec9007"
+    },
+    {
+      "file": "002-doola-iframe.md",
+      "id": "002",
+      "estado": "blocked",
+      "dueno": "Hark",
+      "riesgo": false,
+      "aprobada": false,
+      "sha256": "dbbd0254c7e95ebfaadcf0c2869b74447a59731ff159ffa261a90e7d1f744312"
+    },
+    {
+      "file": "003-rtx-tunnel.md",
+      "id": "003",
+      "estado": "todo",
+      "dueno": "Yæl",
+      "riesgo": false,
+      "aprobada": false,
+      "sha256": "e4ee173b67ce13fd78c1a307a30ce5ea47008f62cafc45d243e53fc3abaaeca3"
+    },
+    {
+      "file": "004-eai-spec.md",
+      "id": "004",
+      "estado": "triage",
+      "dueno": "Hark",
+      "riesgo": false,
+      "aprobada": false,
+      "sha256": "a09d262fbb3e2b17eff53e2c608f04b19ecd595a342d64f56f0ed922a2c928d7"
+    },
+    {
+      "file": "005-repo-weight.md",
+      "id": "005",
+      "estado": "todo",
+      "dueno": "Hermes",
+      "riesgo": true,
+      "aprobada": false,
+      "sha256": "704c0a0fc86f6d7ba5bb51f9600c72e2136ee43d842f09f1f125929ac05ac7f9"
+    },
+    {
+      "file": "006-superficies-latam.md",
+      "id": "006",
+      "estado": "review",
+      "dueno": "Hark",
+      "riesgo": false,
+      "aprobada": true,
+      "sha256": "bb06a91e3442681439e3dd4d4e07069812c0bfc1e69e5a613c721a3087689b11"
+    },
+    {
+      "file": "007-oso-pareja-hermes.md",
+      "id": "007",
+      "estado": "triage",
+      "dueno": "Hermes + Hark (en pareja)",
+      "riesgo": false,
+      "aprobada": false,
+      "sha256": "87dd5868e15dd4eb1f5502ea5a3e11a97fe4f6cfef3ca0ef6b6fdaf49e9c7943"
+    },
+    {
+      "file": "008-hermes-correo.md",
+      "id": "008",
+      "estado": "triage",
+      "dueno": "Hermes",
+      "riesgo": true,
+      "aprobada": false,
+      "sha256": "865dad45053fc6aa995b003c1850eb42e12f7e6756605e004b922779829ea966"
+    },
+    {
+      "file": "009-curator-registro.md",
+      "id": "009",
+      "estado": "review",
+      "dueno": "Hark ($curator)",
+      "riesgo": false,
+      "aprobada": false,
+      "sha256": "ff39838c152f86fbb374238e1768de52bf74eca24db1faec7eb0e50211cc85ed"
+    },
+    {
+      "file": "010-maech-tablero.md",
+      "id": "010",
+      "estado": "review",
+      "dueno": "Hark",
+      "riesgo": false,
+      "aprobada": false,
+      "sha256": "95002f49fe854deb549f9ed74590cfbfaa97146af02f96a38f0b547879b2420c"
+    }
+  ],
+  "principle": "Evidence ≠ Authority: supervision informs, the human decides."
+}
