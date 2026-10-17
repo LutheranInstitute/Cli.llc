@@ -1,0 +1,34 @@
+# 🐱 Octocat revisa el tablero · mæch check
+# Gracias @github por darnos casa, Pages, Actions y comunidad. Todo el respeto.
+# El gatito revisa e informa; no fusiona ni cierra tarjetas. Human stays root.
+name: mæch check · 🐱 revisor
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  tablero:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: 🐱 revisar tablero (mech/board.mec)
+        run: |
+          mkdir -p evidence/ci
+          node mech/check.mjs --json evidence/ci/check.json | tee evidence/ci/check.txt
+      - name: recibo
+        if: always()
+        run: |
+          echo "## 🐱 mæch check · recibo" >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          cat evidence/ci/check.txt >> "$GITHUB_STEP_SUMMARY" || true
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          echo "*Evidence ≠ Authority · Human stays root.* Gracias @github 🐱" >> "$GITHUB_STEP_SUMMARY"
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: mech-check-receipt
+          path: evidence/ci/
