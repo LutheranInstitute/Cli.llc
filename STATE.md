@@ -1,4 +1,4 @@
-# STATE · 2026-10-16
+# STATE · 2026-10-17
 
 | id | tarjeta | estado | dueño |
 |---|---|---|---|
@@ -11,8 +11,14 @@
 | 007 | Biblia del Oso 1569: Hermes y Hark en pareja (OCR ↔ hojas/lector) | triage | Hermes + Hark |
 | 008 | Hermes por correo: gateway Email en el droplet (buzón llm.store en Hostinger) | triage | Hermes |
 | 009 | $curator: primera corrida, registro del IoA (agentes, nodos, rutas) | review | Hark |
+| 010 | mæch: el tablero como máquina de estados | review | Hark |
+| 011 | æ æ æ: cara robótica del Asimov 1 (flota de agentes) | review | Hark (flota) |
+| 012 | Flota 012 · batch nocturno 17-oct-2026 | running | Hark (flota) |
 
 ## Hechos verificados
+- 2026-10-17 23:30 CDT: tarjeta 012 (flota 012, batch nocturno) en `running`, tres carriles.
+- 2026-10-16: tarjeta 011 (cara robótica) y manifiesto `ae/face.ae.json` en rama `010-maech`; `node mech/check.mjs` ✓ (recibo en `evidence/011/`).
+- 2026-10-16: `node mech/check.mjs` valida el tablero (recibo en `evidence/010/`).
 - 2026-10-16 10:30 CDT: droplet `:3000` 200 (hoja inalcanzable), `:80` 502. Registro en `curator/`.
 - Droplet `129.212.180.252`: broker `:3000` responde; hoja Victus inalcanzable; nginx `:80` da 502 (2026-10-13 20:20 CDT).
 - doola: el iFrame de referidos está activo desde 2026-10-13; atribuye por partner ID, no por el link de PartnerStack.
